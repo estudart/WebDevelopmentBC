@@ -9,6 +9,26 @@
   integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 
   <style>
+    @media (max-width: 993px)  {
+      #title > .container {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: left;
+      margin: 0px;
+      }
+
+      .align-items-center {
+      align-items: left!important;
+      }
+      
+      #text-title {
+        width: 100%;
+      }
+
+      #dog-image {
+        width: 100%;
+      }
+    }
     .gradient-background {
       background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
       background-size: 180% 180%;
@@ -32,23 +52,28 @@
     }
 
     #title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       max-width: 100%;
-      margin: 0px;
     }
 
-    #title > div {
-      justify-content: center;
-      align-items: center;
+    .first {
+      width: 80%;
+    }
+
+    .one {
+      background-color: white;
+      color: black;
+    }
+
+    .two {
+      color: white;
+      border-color: white;
     }
 
     div > h1 {
       font-size: 3rem;
-    }
-
-    #dog-image {
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     #square-feature {
@@ -69,6 +94,20 @@
       justify-content: center;
       align-items: center;
     }
+
+    #features {
+      background-color: white;
+    }
+
+    #footer {
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+    }
+
+    .liked-black {
+      background-color: black;
+    }
+
   </style>
 </head>
 
@@ -76,12 +115,12 @@
 
   <!-- Title -->
   <section id="title" class="container gradient-background">
-    <div class="row pe-lg-0 pt-5 align-items-center rounded-3">
-      <div class="col-6 p-5 p-lg-5 pt-lg-3">
-        <h1 class="fw-bold lh-1 text-body-emphasis">Meet new and interesting dogs nearby.</h1>
+    <div class="container first row pe-lg-0 pt-5 align-items-center rounded-3">
+      <div id="text-title" class="col-6 p-5 p-sm-0 pt-sm-3 p-lg-5 pt-lg-3">
+        <h1  class="fw-bold lh-1 text-body-emphasis">Meet new and interesting dogs nearby.</h1>
         <p class="lead"></p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">
+          <button type="button" class="one btn btn-primary btn-lg px-4 me-md-2 fw-bold">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-apple mb-1" viewBox="0 0 16 16">
               <path
@@ -91,7 +130,7 @@
             </svg>
             Download
           </button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">
+          <button type="button" class="two btn btn-outline-secondary btn-lg px-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-google-play mb-1" viewBox="0 0 16 16">
               <path
@@ -101,7 +140,7 @@
           </button>
         </div>
       </div>
-      <div id="dog-image" class="col-6 pb-0 pb-lg-0 p-lg-5 pt-lg-3 pb-0 pb-lg-0">
+      <div id="dog-image" class="col-6 pb-0 p-sm-0 pb-lg-0 p-lg-5 pt-lg-3 pb-0 pb-lg-0">
           <img class="rounded-lg-3" src="./images/iphone.png" alt="Dog Iphone">
       </div>
     </div>
@@ -149,20 +188,119 @@
     </div>
 
   </section>
+
   <!-- Testimonial -->
-  <section id="testimonial">
-    <div class="col-lg-4">
-      <p>"I no longer have to sniff other dogs for love. I've found the hottest Corgi on TinDog. Woof."</p>
+  <section id="testimonial" class="bg-body-tertiary">
+
+    <div class="col-lg-10 m-5">
+      <p style="font-size: 2rem; text-align: center; font-weight: bold;">"I no longer have to sniff other dogs for love. I've found the hottest Corgi on TinDog. Woof."</p>
       <img src="./images/dog-img.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140">
       <h2 class="fw-normal">Pebbles, New York</h2>    
     </div>
-  </section>
-  <!-- Pricing -->
-  <section id="pricing">
 
   </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="container py-3">
+
+    <header>
+      <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal text-body-emphasis">A Plan for Every Dog's Needs</h1>
+        <p class="fs-5 text-body-secondary">Simple and affordable price plans for you and your dog.</p>
+      </div>
+    </header>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Chihuahua</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>5 Matches Per Day</li>
+              <li>10 Messages Per Day</li>
+              <li>Unlimited App Usage</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Labrador</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Unlimited Matches</li>
+              <li>Unlimited Messages</li>
+              <li>Unlimited App Usage</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-primary liked-black">Get started</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 border-primary liked-black" style="color: white;">
+            <h4 class="my-0 fw-normal">Mastiff</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Pirority Listing</li>
+              <li>Unlimited Matches & Messages</li>
+              <li>Unlimited App Usage</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-primary liked-black">Contact us</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
   <!-- Footer -->
-  <section id="footer">
+  <section id="footer" class="gradient-background">
+
+    <footer class="pt-4 border-top">
+      <div class="row">
+        <div class="col-12 col-md">
+          <small class="d-block mb-3 text-body-secondary">© TinDog</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Features</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none text-body-secondary" href="#">Cool stuff</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none text-body-secondary" href="#">Random feature</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none text-body-secondary" href="#">Team feature</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none text-body-secondary" href="#">Stuff for developers</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none text-body-secondary" href="#">Another one</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none text-body-secondary" href="#">Last time</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none text-body-secondary" href="#">Resource</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none text-body-secondary" href="#">Resource name</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none text-body-secondary" href="#">Another resource</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none text-body-secondary" href="#">Final resource</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none text-body-secondary" href="#">Team</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none text-body-secondary" href="#">Locations</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none text-body-secondary" href="#">Privacy</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none text-body-secondary" href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
 
   </section>
 
